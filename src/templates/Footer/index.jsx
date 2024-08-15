@@ -3,6 +3,7 @@ import cls from './style.module.scss'
 import clx from 'classnames'
 import { Logo } from '@/ui';
 import { Navigation } from '@/components';
+import { Link } from 'react-router-dom';
 
 
 export default ({className}) => {
@@ -22,9 +23,9 @@ export default ({className}) => {
 					<span>© 2024 YASIR. Все права защищены.</span>
 
 					<div className={cls.info}>
-						<a href="/privacy-policy">Политика конфиденциальности</a>
+						<Link to="/privacy-policy">Политика конфиденциальности</Link>
 						{/* <a href="/license">Лицензия</a> */}
-						<a href="/offer">Договор-оферты</a>
+						<Link to="/offer">Договор-оферты</Link>
 					</div>
 				</div>
 			</div>

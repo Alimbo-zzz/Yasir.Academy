@@ -7,11 +7,19 @@ html{
 	background: hue('black');
 }
 
-
+*{
+	scroll-margin-top: 100px;
+}
 
 ::selection {
 	color: hue('brown');
 	background: hue('orange');
+}
+
+h1,h2{
+	background: linear-gradient(45deg, hue('white') 20%,  hue('brown', 0.1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -88,3 +96,25 @@ hr{
 		color: hue('light-orange');
 	}
 }
+
+
+
+*{
+	&::-webkit-scrollbar {
+		&{
+			@include a-value('width', 3px, 10px);
+		}
+		&{
+			@include a-value('height', 3px, 10px);
+		}
+	}
+	
+	&::-webkit-scrollbar-track {
+		background-color: hue('dark-brown');
+	}
+	
+	&::-webkit-scrollbar-thumb {
+		background: hue('orange');
+	}
+}
+

@@ -1,0 +1,23 @@
+.wrap{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+
+.title{
+	display: flex;
+	text-transform: uppercase;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	gap: 20px;
+
+	h1{
+		font-size: 8em;
+	}
+
+}

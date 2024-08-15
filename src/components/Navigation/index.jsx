@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import cls from './style.module.scss'
 import clx from 'classnames'
+import { Link } from 'react-router-dom';
 
 
 export default ({className, full=false, navClick}) => {
 	const [nav, setNav] = useState([
-		{link: '#about', content: 'О нас'},
-		{link: '#advantages', content: 'Преимущества'},
+		{link: '/#about', content: 'О нас'},
+		{link: '/#advantages', content: 'Преимущества'},
 		// {link: '#rate', content: 'Цена'},
-		{link: '#faq', content: 'FAQ'},
+		{link: '/#faq', content: 'FAQ'},
 	]
 )
 
@@ -23,12 +24,12 @@ export default ({className, full=false, navClick}) => {
 	return (<>
 		<nav className={clx(cls.wrap, className)}>
 			{nav.map(el => 
-				<a 
+				<Link 
 					onClick={itemClick} 
-					href={el.link} 
+					to={el.link} 
 					key={el.link}
 					className={cls.item}
-				>{el.content}</a>)}
+				>{el.content}</Link>)}
 		</nav>
 	</>);
 }

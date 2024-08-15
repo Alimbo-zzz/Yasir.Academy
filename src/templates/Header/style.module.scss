@@ -1,8 +1,10 @@
 .wrap{
 	padding: 1em 0;
-	background: hue('dark-brown');
+	background: hue('dark-brown', 0.6);
 	border-bottom: 2px solid hue('dark-gray');
 	z-index: 20;
+	backdrop-filter: blur(10px);
+	translate: 0 -2px;
 }
 
 .cont{
