@@ -1,0 +1,90 @@
+html,body{
+	color: hue('white');
+	font-family: "Manrope", Arial, Helvetica, sans-serif;
+}
+
+html{
+	background: hue('black');
+}
+
+
+
+::selection {
+	color: hue('brown');
+	background: hue('orange');
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 900;
+}
+
+h1{@include a-value('font-size', 48px, 72px)}
+h2{@include a-value('font-size', 40px, 48px)}
+h3{font-size: 32px}
+h4{font-size: 24px}
+h5{font-size: 20px}
+h6{font-size: 18px}
+
+p{@include a-value('font-size', 14px, 16px)}
+
+
+.wrapper{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+	min-width: $min-width;
+	margin: 0 auto;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+[container]{
+	margin: 0 auto;
+	$gap: calc(15px * 2);
+	width: calc(100% - $gap);
+	@include isTablet{max-width: calc(screen('phone') - $gap);}
+	@include isLaptop{max-width: calc(screen('tablet') - $gap);}
+	@include isDesktop{max-width: calc(screen('laptop') - $gap);}
+	@media(min-width: screen('desktop')){max-width: calc(screen('desktop') - $gap);}
+}
+
+main{
+	flex: 1;
+	padding-bottom: 6em;
+}
+
+header{
+	position: sticky;
+	top: 0;
+}
+
+
+.placeholder{
+	font-size: 12px;
+	font-weight: 600;
+	color: hue('gray');
+}
+
+hr{
+	border: none;
+	height: 2px;
+	width: 100%;
+	background: hue('dark-gray');
+}
+
+[data-title]{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin-bottom: 1em;
+
+	&::before{
+		content: attr(data-title);
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: hue('light-orange');
+	}
+}

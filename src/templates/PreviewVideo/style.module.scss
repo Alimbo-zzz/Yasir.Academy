@@ -1,0 +1,92 @@
+.overlay{
+
+	position: relative;
+}
+
+.wrap{
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+	aspect-ratio: 3/2.2;
+	overflow: hidden;
+	border-radius: 20px;
+	border: 1.5px solid hue('dark-gray');
+	padding: 0.5em;
+
+	&{
+		@include a-value('border-radius', 10px, 20px);
+		@include isLaptop{
+			aspect-ratio: 16/9;
+		}
+	}
+
+
+	*{
+		pointer-events: none;
+	}
+
+	video{
+		width: 100%; height: 100%;
+		object-fit: cover;
+		transition: 0.5s;
+		transition-delay: 0.3s;
+		filter: blur(5px);
+
+	}
+
+
+	.content::before{
+		content: '';
+		position: absolute;
+		width: 105%; height: 105%;
+		background: hue('brown');
+		opacity: 0.9;
+		z-index: 5;
+		transition: 0.3s;
+	}
+
+
+	&[data-play='true']{
+		.content::before{opacity: 0}
+		video{filter: blur(0px)}
+	}
+
+
+}
+
+
+.content{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 100%;
+	border: 2px solid hue('dark-gray');
+
+	&{
+		@include a-value('border-radius', 5px, 10px)
+	}
+}
+
+
+.icon{
+	position: absolute;
+	transition: 0.5s;
+	opacity: 0;
+	z-index: 8;
+
+
+	&[data-visible='true']{
+		opacity: 1;
+	}
+	
+	svg{
+		opacity: 0.8;
+		font-size: 60px;
+
+		&{
+			@include a-value('font-size', 60px, 120px)
+		}
+	}
+}

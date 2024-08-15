@@ -1,0 +1,69 @@
+.wrap{
+	background: hue('dark');
+
+
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+
+	&{
+		@include a-value('padding', 30px, 60px);
+	}
+
+}
+
+
+
+.cont{
+	display: flex;
+	flex-direction: column;
+
+	&{		
+		@include a-value('gap', 30px, 60px);
+	}
+}
+
+.block{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-between;
+	@include isTablet{
+		flex-direction: row;
+	}
+
+	p, span{
+		color: hue('gray');
+		font-weight: 600;
+	}
+
+	span{font-size: 14px;}
+}
+
+.box{
+	max-width: 360px;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.nav{
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start !important;
+	@include isTablet{
+		flex-direction: row;
+	}
+}
+
+.info{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+
+	a{
+		color: inherit;
+		text-decoration: underline;
+		padding: 0.5em;
+	}
+}

@@ -1,0 +1,16 @@
+.swiper-pagination{
+	translate: 0 60px;
+
+
+}
+
+
+.swiper-pagination-bullet{
+	background: hue('orange');
+	width: 0.8em; height: 0.8em;
+
+	@include isTablet{
+		width: 3em; height: 0.4em;
+		border-radius: 0.5em;
+	}
+}

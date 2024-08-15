@@ -1,0 +1,35 @@
+.m{
+	padding: 2em;
+}
+
+.wrap{
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+	position: fixed;
+	width: max(100%, 100vw);
+	top: 0;
+	left: 50%;
+	translate: -50% 0;
+	min-width: $min-width;
+
+
+
+	a{
+		color: hue('w');
+		@include square(3em);
+		background: hue('dark');
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0.6em;
+		box-shadow: 0.1em 0.1em 1.6em hue('b', 0.3);
+		@include a-click;
+	}
+
+	svg{
+		font-size: 2em;
+	}
+}

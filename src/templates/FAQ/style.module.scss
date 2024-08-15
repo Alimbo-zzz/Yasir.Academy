@@ -1,0 +1,18 @@
+.wrap{
+	position: relative;
+
+	p{
+		font-size: 20px;
+		font-weight: 600;
+		color: hue('gray');
+		margin-bottom: 4em;
+	}
+
+}
+
+
+.list{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}

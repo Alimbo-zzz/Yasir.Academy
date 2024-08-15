@@ -1,0 +1,5 @@
+.main{
+	display: flex;
+	flex-direction: column;
+	@include a-value('gap', 100px, 200px)
+}

@@ -1,0 +1,52 @@
+.wrap{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding-bottom: 20vh;
+
+	*{
+		white-space: pre-line;
+		z-index: 10;
+	}
+
+	h1,h2,h3{
+		margin: 1em 0;
+		color: hue('light-brown');
+		text-shadow: 0.1em 0.1em 0.4em hue('b', 0.8);
+	}
+
+	@media(max-width: screen('tablet')){	
+		h1{font-size: 36px !important}
+		h2{font-size: 24px !important}
+		h3{font-size: 20px !important}
+		p,ul,li{font-size: 14px !important}
+	}
+
+
+	ul{
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	li{
+		padding-left: 0.5em;
+
+		&::before{
+			content: '';
+			display: inline-block;
+			@include square(0.5em);
+			border-radius: 50%;
+			margin-right: 0.5em;
+			background: hue('light-brown');
+			translate: 0 -20%;
+		}
+	}
+
+	a{
+		display: inline;
+		padding: 0;margin: 0;
+		color: hue('light-orange');
+		text-decoration: underline;
+	}
+}

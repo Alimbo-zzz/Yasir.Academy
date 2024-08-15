@@ -1,0 +1,19 @@
+.wrap{
+	position: absolute;
+	z-index: 0;
+	pointer-events: none;
+	user-select: none;
+
+	border-radius: 50%;
+	background: hue('light-brown');
+	opacity: 1;
+
+	aspect-ratio: 1/1;
+	filter: blur(10em);	
+	
+
+	&{
+		@include a-value('width', 18em, 25em);
+		@include isLaptop{filter: blur(15em)}
+	}
+}

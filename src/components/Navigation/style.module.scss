@@ -1,0 +1,39 @@
+.wrap{
+	display: flex;
+	font-size: 16px;
+	justify-content: center;
+	align-items: center;
+
+	&{		
+		@include a-value('gap', 0.4em, 1em);
+	}
+}
+
+
+.item{
+	font: inherit;
+	color: inherit;
+	font-weight: 600;
+	padding: 0.5em;
+	transition: 0.3s;
+	position: relative;
+	white-space: nowrap;
+
+	&::before{
+		content: '';
+		position: absolute;
+		left: 50%;bottom: 0;
+		translate: -50% 0;
+		height: 2px; width: calc(100% - 0.5em);
+		background: hue('orange');
+		transition: 0.3s;
+		scale: 0 1;
+	}
+
+	&{
+		@include hover{
+			color: hue('orange');
+			&::before{scale: 1}			
+		}
+	}
+}

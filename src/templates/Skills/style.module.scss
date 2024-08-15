@@ -1,0 +1,44 @@
+.wrap{
+	position: relative;
+}
+
+
+.slider{
+	overflow: visible !important;
+
+
+}
+
+.slide{
+	user-select: none;
+	height: 350px !important;	
+}
+
+.item{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	height: 100%;
+	&{@include blur-box}
+
+	&__icon{
+		@include square(6em);
+		padding: 1em;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: hue('light-brown');
+	}
+	p{
+		flex: 1;
+	}
+
+	svg{
+		width: 100%; height: 100%;
+	}
+
+	@include isLaptop{
+		gap: 30px;
+	}
+}
