@@ -88,12 +88,15 @@ hr{
 	gap: 1em;
 	margin-bottom: 1em;
 
+
 	&::before{
 		content: attr(data-title);
 		font-size: 16px;
 		font-weight: 500;
 		text-transform: uppercase;
 		color: hue('light-orange');
+		background: none;
+		-webkit-text-fill-color: hue('light-orange');
 	}
 }
 
