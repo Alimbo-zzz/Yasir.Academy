@@ -9,7 +9,7 @@ const _src = resolve(__dirname, './src');
 const _public = resolve(__dirname, './public');
 
 export default defineConfig({
-  base: '/',
+  base: '/Yasir.Academy/',
   plugins: [
     react(),
     legacy({ targets: ['IE >= 11'] }),
