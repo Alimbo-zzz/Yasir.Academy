@@ -15,7 +15,7 @@ const Hamburger = ({isActive, toggle}) => (
 )
 
 const Menu = ({isActive, navClick}) => (
-	<div onClick={e => e.stopPropagation()} data-active={isActive} className={cls.menu}>
+	<div  data-active={isActive} className={cls.menu}>
 		<div className={cls.menu__cont} container=''>
 			<Navigation navClick={navClick} className={cls.menu__nav}/>
 			<Button size="S" href={'#contacts'} className={cls.menu__btn}>Связаться</Button>
@@ -39,7 +39,7 @@ export default ({className}) => {
 	}, [])
 
 	return (<>
-		<header className={clx(cls.wrap, className)}>
+		<header onClick={e => e.stopPropagation()} className={clx(cls.wrap, className)}>
 			<div container='' className={cls.cont}>
 				<Logo className={cls.logo}/>
 				<Navigation className={cls.nav}/>
