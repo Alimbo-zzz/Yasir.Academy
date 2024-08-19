@@ -5,6 +5,7 @@ import preview_mp4 from './preview.mp4';
 import PauseIcon from '@mui/icons-material/PauseCircleRounded';
 import PlayIcon from '@mui/icons-material/PlayCircleRounded';
 import { DecoreBlur } from '@/components';
+import { ScrollAnimate } from '@/contexts';
 
 export default ({className}) => {
 	const [isPlay, setIsPlay] = useState(false);
@@ -40,15 +41,17 @@ export default ({className}) => {
 
 	return (<>
 		<div id='about' className={cls.overlay}>
-			<h2 data-title='о нас'>Приятно познакомится</h2>
-			<div onMouseMove={showControlls} container='' onClick={togglePlay} data-play={isPlay} className={clx(cls.wrap, className)}>
-				<div className={cls.content}>
-					<video ref={videoRef} onEnded={ended} src={preview_mp4}></video>
-					<div data-visible={!isPlay ? 'true' : iconVisible} className={cls.icon}>
-						{isPlay ? <PauseIcon/> : <PlayIcon/>}
+			<ScrollAnimate><h2 data-title='о нас'>Приятно познакомится</h2></ScrollAnimate>
+			<ScrollAnimate delay={100} duration={1.5} animateIn='zoomInUp'>
+				<div onMouseMove={showControlls} container='' onClick={togglePlay} data-play={isPlay} className={clx(cls.wrap, className)}>
+					<div className={cls.content}>
+						<video ref={videoRef} onEnded={ended} src={preview_mp4}></video>
+						<div data-visible={!isPlay ? 'true' : iconVisible} className={cls.icon}>
+							{isPlay ? <PauseIcon/> : <PlayIcon/>}
+						</div>
 					</div>
 				</div>
-			</div>
+			</ScrollAnimate>
 			<DecoreBlur r='0' t='0' translate='50% 0'/>
 		</div>
 		

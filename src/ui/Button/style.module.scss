@@ -16,6 +16,16 @@
 	box-shadow: 0.2em 0.2em 0.5em hue('b',0.1);
 	cursor: pointer;
 
+
+	&[theme='light']{
+		background: linear-gradient(to right, hue('w'), hue('dark-brown', 0.2));
+		color: hue('dark');
+	
+		&:hover{
+			background: hue('w');
+		}
+	}
+
 	&:hover{
 		background: hue('light-brown');
 	}

@@ -3,6 +3,7 @@ import cls from './style.module.scss'
 import clx from 'classnames'
 import { DropDown } from '@/ui';
 import { DecoreBlur } from '@/components';
+import { ScrollAnimate } from '@/contexts';
 
 
 export default ({className}) => {
@@ -17,11 +18,11 @@ export default ({className}) => {
 
 	return (<>
 		<div id='faq' container='' className={clx(cls.wrap, className)}>
-			<h2 data-title=''>FAQ</h2>
-			<p style={{textAlign: 'center'}}>Здесь собраны ответы на наиболее популярные вопросы о нашем курсе.</p>
+			<ScrollAnimate><h2 data-title=''>FAQ</h2></ScrollAnimate>
+			<ScrollAnimate delay={100} duration={1.5}><p style={{textAlign: 'center'}}>Здесь собраны ответы на наиболее популярные вопросы о нашем курсе.</p></ScrollAnimate>
 			
 			<ul className={cls.list}>
-				{faq.map((el, i) => <DropDown {...el} key={i}/>)}
+				{faq.map((el, i) => <ScrollAnimate delay={i * 150} key={i}><DropDown {...el} /></ScrollAnimate> )}
 			</ul>
 		
 			<DecoreBlur t='0' r='0' translate='50% -10%'/>

@@ -1,19 +1,12 @@
 import React, { useEffect } from 'react';
 import cls from './style.module.scss'
-import { Contacts, FAQ, Footer, Header, Intro, PreviewVideo, Skills, Advantages } from '@/templates';
-import { useLocation, useParams } from 'react-router-dom';
+import { Contacts, FAQ, Footer, Header, Intro, PreviewVideo, Skills, Advantages, PriceList } from '@/templates';
 import {Animate} from '@/contexts'
 
 
 
 export default (props) => {
-	const params = useParams();
-	const {hash} = useLocation();
 
-	useEffect(()=>{
-		if(!hash || hash == '#') return;		
-		document?.querySelector(hash)?.scrollIntoView()
-	},[hash])
 	
 	return (<>
 		<Animate className='wrapper'>
@@ -23,6 +16,7 @@ export default (props) => {
 				<PreviewVideo/>
 				<Skills/>
 				<Advantages/>
+				<PriceList/>
 				<Contacts/>
 				<FAQ/>
 			</main>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cls from './style.module.scss'
 import clx from 'classnames'
 import { DecoreBlur } from '@/components';
+import { ScrollAnimate } from '@/contexts';
 
 
 export default ({className}) => {
@@ -18,12 +19,14 @@ export default ({className}) => {
 	return (<>
 		<div container='' id='advantages' className={clx(cls.wrap, className)}>
 			<DecoreBlur t='0' r='0' translate='50% -25%' />
-			<h2  data-title={'ОСОБЕННОСТИ'}>Почему выбрать Yasir?</h2>
+			<ScrollAnimate><h2  data-title={'ОСОБЕННОСТИ'}>Почему выбрать Yasir?</h2></ScrollAnimate>
 			<ul className={cls.list}>
-				{list.map((el, i) => <li className={cls.item} key={i}>					
-					<h4>{el.title}</h4>
-					<p>{el.text}</p>
-				</li>)}
+				{list.map((el, i) => <ScrollAnimate  key={i} delay={i * 150}>
+					<li className={cls.item}>					
+						<h4>{el.title}</h4>
+						<p>{el.text}</p>
+					</li>
+				</ScrollAnimate>)}
 			</ul>
 		</div>
 	</>);

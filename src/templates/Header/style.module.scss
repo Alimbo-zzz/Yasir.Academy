@@ -5,6 +5,14 @@
 	z-index: 20;
 	backdrop-filter: blur(10px);
 	translate: 0 -2px;
+	position: fixed;
+	left: 0;top: 0;
+	width: 100%;
+
+	@include isTablet{
+		position: relative;
+		left: auto; top: auto;
+	}
 }
 
 .cont{
@@ -16,25 +24,33 @@
 
 
 .menu{
-	position: fixed;
-	right: 0;top: 0;
-	z-index: 100;
-	width: 100%; height: fit-content;
-	background: hue('gray-brown');
-	min-height: 200px;
-	transition: 0.3s;
-	translate: 105% 0;
-	padding-top: 80px;
-	padding-bottom: 20px;
+	overflow: hidden;
+	height: fit-content;
+	max-height: 0vh;
+	pointer-events: none;
+	transition-delay: 0.3s;
+
+	&[data-active='true']{
+		opacity: 1;
+		overflow: visible;
+		pointer-events: auto;
+		max-height: 50vh;
+
+		.menu__cont{
+			opacity: 1;
+			transition-delay: 0.3s;
+		}
+	}
+
+	opacity: 0;
+	transition: 0.4s;
 
 	&__cont{
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
-	}
-
-	&[data-active='true']{
-		translate: 0;
+		transition: 0.3s;
+		opacity: 0;
 	}
 
 	&__nav{
@@ -82,14 +98,15 @@
 }
 
 
+.wrap[data-active]{
+	background: hue('dark-brown', 0.8);
+}
+
 .nav, .btn{
 	display: none !important;
 }
 
 
-.hamburger, .logo{
-	z-index: 110;
-}
 
 @include isLaptop{
 	.hamburger, .menu{

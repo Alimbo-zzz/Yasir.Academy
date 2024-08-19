@@ -4,13 +4,14 @@ import cls from './style.module.scss'
 import { Link } from 'react-router-dom';
 
 
-export default ({href=null, size='',  w='fit-content', css={}, className='', children, type='button', ...props }) => {
+export default ({href=null, size='', theme='dark',  w='fit-content', css={}, className='', children, type='button', ...props }) => {
 	
 	let ops = {
 		type,
 		to: href,
 		"data-size": size.toUpperCase(),
 		style: {width: w, ...css},
+		theme,
 		className: clx(cls.btn, className),
 		...props,
 	}

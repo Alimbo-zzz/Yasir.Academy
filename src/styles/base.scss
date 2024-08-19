@@ -1,4 +1,5 @@
 html,body{
+	overflow: hidden;
 	color: hue('white');
 	font-family: "Manrope", Arial, Helvetica, sans-serif;
 }
@@ -15,6 +16,8 @@ html{
 	color: hue('brown');
 	background: hue('orange');
 }
+
+
 
 h1,h2{
 	background: linear-gradient(45deg, hue('white') 20%,  hue('brown', 0.1));

@@ -5,5 +5,5 @@ import Icon from "./Icon";
 
 export {
 	Button, DropDown,
-	Logo, Icon,
+	Logo, Icon, 
 }

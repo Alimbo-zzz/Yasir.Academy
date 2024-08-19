@@ -15,10 +15,10 @@ const Hamburger = ({isActive, toggle}) => (
 )
 
 const Menu = ({isActive, navClick}) => (
-	<div  data-active={isActive} className={cls.menu}>
-		<div className={cls.menu__cont} container=''>
+	<div container='' data-active={isActive} className={cls.menu}>
+		<div className={cls.menu__cont}>
 			<Navigation navClick={navClick} className={cls.menu__nav}/>
-			<Button size="S" href={'#contacts'} className={cls.menu__btn}>Связаться</Button>
+			<Button onClick={navClick} size="S" href={'#contacts'} className={cls.menu__btn}>Связаться</Button>
 		</div>
 	</div>
 ) 
@@ -39,14 +39,14 @@ export default ({className}) => {
 	}, [])
 
 	return (<>
-		<header onClick={e => e.stopPropagation()} className={clx(cls.wrap, className)}>
+		<header data-active={menuIsOpen} onClick={e => e.stopPropagation()} className={clx(cls.wrap, className)}>
 			<div container='' className={cls.cont}>
 				<Logo className={cls.logo}/>
 				<Navigation className={cls.nav}/>
 				<Button size="S" href={'#contacts'} className={cls.btn}>Связаться</Button>
 				<Hamburger toggle={toggleMenu} isActive={menuIsOpen}/>
-				<Menu  navClick={closeMenu} isActive={menuIsOpen}/>
 			</div>
+			<Menu isActive={menuIsOpen} navClick={closeMenu} />
 		</header>
 	</>);
 }

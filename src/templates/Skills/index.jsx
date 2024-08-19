@@ -3,12 +3,13 @@ import cls from './style.module.scss'
 import clx from 'classnames'
 import { DecoreBlur } from '@/components';
 
-import { Pagination} from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './swiper.scss';
 import { Icon } from '@/ui';
+import { ScrollAnimate } from '@/contexts';
 
 
 export default ({className}) => {
@@ -30,9 +31,12 @@ export default ({className}) => {
 		slidesPerView: 1.2,
 		spaceBetween: '5%', 
 		className: cls.slider,
-		modules: [ Pagination],
+		modules: [ Pagination, Autoplay],
 		rewind: true,
-		
+		autoplay: {
+			delay: 2000,
+			disableOnInteraction: false,
+		},		
 		pagination:{ clickable: true },
 		breakpoints: {
 			480: {				
@@ -57,17 +61,19 @@ export default ({className}) => {
 	return (<>
 		<div container='' className={clx(cls.wrap, className)}>
 			<DecoreBlur t='0' l='0' translate='-50% 0'/>
-			<h2 data-title=''>За 8 недель вы научитесь</h2>
+			<ScrollAnimate><h2 data-title=''>За 8 недель вы научитесь</h2></ScrollAnimate>
 			
-			<Swiper  {...swiperOps} >
-				{skills.map((el, i) => <SwiperSlide key={i} className={cls.slide}>
-					<div className={cls.item}>
-						<div className={cls.item__icon}><Icon name={el.icon}/></div>
-						<h4>{el.title}</h4>
-						<p>{el.text}</p>
-					</div>
-				</SwiperSlide>)}
-			</Swiper>
+			<ScrollAnimate animateIn='fadeInRight' delay={300}>
+				<Swiper  {...swiperOps} >
+					{skills.map((el, i) => <SwiperSlide key={i} className={cls.slide}>
+						<div className={cls.item}>
+							<div className={cls.item__icon}><Icon name={el.icon}/></div>
+							<h4>{el.title}</h4>
+							<p>{el.text}</p>
+						</div>
+					</SwiperSlide>)}
+				</Swiper>
+			</ScrollAnimate>
 			
 		</div>
 	</>);

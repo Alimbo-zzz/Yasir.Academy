@@ -1,0 +1,2 @@
+export const phone = (value) => String(value).replace(/\+(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+7 ($2) $3-$4-$5');
+export const price = (value, simbol=' ') => String(value).replace(/(\d)(?=(\d{3})+(?!\d))/g, `$1${simbol}`);

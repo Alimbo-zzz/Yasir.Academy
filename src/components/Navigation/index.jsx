@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 export default ({className, full=false, navClick}) => {
 	const [nav, setNav] = useState([
-		{link: '/#about', content: 'О нас'},
-		{link: '/#advantages', content: 'Преимущества'},
-		// {link: '#rate', content: 'Цена'},
-		{link: '/#faq', content: 'FAQ'},
+		{link: '#about', content: 'О нас'},
+		{link: '#advantages', content: 'Преимущества'},
+		{link: '#pricelist', content: 'Цена'},
+		{link: '#faq', content: 'FAQ'},
 	]
 )
 
