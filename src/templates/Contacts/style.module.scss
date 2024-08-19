@@ -80,7 +80,7 @@
 	gap: 3em;
 
 	&__item{
-		@include square(4em);
+		@include square(3em);
 		background: hue('dark-gray', 0.5);
 		border-radius: 50%;
 		display: flex;
@@ -97,6 +97,6 @@
 	}
 
 	svg{
-		font-size: 40px;
+		font-size: 30px;
 	}
 }

@@ -1,6 +1,6 @@
 .wrap{
 	position: absolute;
-	z-index: 0;
+	z-index: 100;
 	pointer-events: none;
 	user-select: none;
 
@@ -9,7 +9,7 @@
 	opacity: 1;
 
 	aspect-ratio: 1/1;
-	filter: blur(10em);	
+	filter: blur(20em);	
 	
 
 	&{

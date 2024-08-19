@@ -1,7 +1,7 @@
 .wrap{
 	padding: 1em 0;
 	background: hue('dark-brown', 0.6);
-	border-bottom: 2px solid hue('dark-gray');
+	border-bottom: 1px solid hue('dark-gray');
 	z-index: 20;
 	backdrop-filter: blur(10px);
 	translate: 0 -2px;
@@ -9,9 +9,9 @@
 	left: 0;top: 0;
 	width: 100%;
 
-	@include isTablet{
-		position: relative;
-		left: auto; top: auto;
+	@include isLaptop{
+		position: sticky;
+		left: auto;
 	}
 }
 

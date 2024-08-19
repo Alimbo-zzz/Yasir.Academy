@@ -20,17 +20,17 @@
 	$colors: (
 		"b": hsla(0, 0%, 0%, $a),
 		"w": hsla(0, 0%, 100%, $a),
-		"white": hsla(24, 9%, 90%, $a),
+		"white": hsla(0, 0%, 99%, $a),
 		"black": hsla(20, 12%, 5%, $a),
 		"light-brown": hsla(22, 95%, 26%, $a),
 		"orange": hsla(22, 95%, 44%, $a),
 		"light-orange": hsla(22, 88%, 70%, $a),
 		"dark-brown": hsla(27, 23%, 9%, $a),
 		"brown": hsla(23, 68%, 11%, $a),
-		"dark": hsla(26, 19%, 7%, $a),
-		"gray": hsla(23, 10%, 58%, $a),
+		"dark": hsla(27, 22%, 10%, $a),
+		"gray": hsla(24, 10%, 71%, $a),
 		"gray-brown": hsla(27, 9%, 19%, $a),
-		"dark-gray": hsla(22, 13%, 16%, $a),
+		"dark-gray": hsla(20, 7%, 25%, $a),
 	);
 	
 
@@ -93,22 +93,28 @@ $max-width: 1324px;
 	max-height: $size;
 }
 
-@mixin blur-box($border-size: 1.5em){
+@mixin blur-box($border-size: 8px){
+	$r: 1em;
+	$main-color: #1E1813;
+	$decor-color: #81602E;
 	position: relative;
-	border-radius: 1em;
-	border: 2px solid hue('dark-gray');
-	padding: 2.6em 2em;
+	border-radius: $r;
+	border: 1px solid color-mix(in srgb, $main-color, #fff 15%);
+	padding: 2.2em 2em;
 
 	&::before{
 		content: '';
 		$size: calc(100% - $border-size);
+		border: inherit;
+		border-color: color-mix(in srgb, $main-color, #fff 8%);
+		// border-color: ;
 		position: absolute;
 		left: 50%; top: 50%;
 		translate: -50% -50%;
-		background: hue('dark-gray', 0.4);
+		background: $main-color;
 		backdrop-filter: blur(5px);
-		box-shadow: 0 0 1em hue('gray', 0.2);
-		border-radius: 0.5em;
+		box-shadow: 0 0 1.4em rgba($color: $decor-color, $alpha: 0.25);
+		border-radius: calc($r / 1.5);
 		width: $size; height: $size;
 		z-index: -1;
 	}

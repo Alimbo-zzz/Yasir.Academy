@@ -19,6 +19,8 @@ export default ({className, full=false, navClick}) => {
 
 	const itemClick = (e) => {
 		if(typeof navClick == 'function' ) navClick();
+		let selector  = '#' + e.target.href.split('#').reverse()[0];
+		document?.querySelector(selector)?.scrollIntoView()
 	} 
 	
 	return (<>

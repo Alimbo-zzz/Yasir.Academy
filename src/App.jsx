@@ -9,10 +9,10 @@ const App = (props) => {
  	const location = useLocation();
 
 
-	useEffect(()=>{
-		if(!location.hash || location.hash == '#') return;		
-		document?.querySelector(location.hash)?.scrollIntoView()
-	},[location.hash])
+	// useEffect(()=>{
+	// 	if(!location.hash || location.hash == '#') return;		
+	// 	document?.querySelector(location.hash)?.scrollIntoView()
+	// },[location.hash])
 
 
 	return (<>

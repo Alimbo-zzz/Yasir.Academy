@@ -22,12 +22,12 @@
 		color: hue('dark');
 	
 		&:hover{
-			background: hue('w');
+			background-color: hue('w');
 		}
 	}
 
 	&:hover{
-		background: hue('light-brown');
+		background-color: hue('light-brown');;
 	}
 
 	&[data-size='S']{

@@ -11,34 +11,37 @@
 
 .slide{
 	user-select: none;
-	height: 350px !important;	
+	height: 330px !important;	
 }
 
 .item{
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 40px;
 	height: 100%;
 	&{@include blur-box}
 
+	h4{
+		margin-bottom: -1em;
+	}
+
 	&__icon{
+		$bg: hsla(18, 14%, 15%, 1);
 		@include square(6em);
 		padding: 1em;
 		border-radius: 50%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		// background: $bg;
+		border: 1px solid color-mix(in srgb, $bg, #fff 10%);
 		background: hue('light-brown');
-	}
+	}	
 	p{
 		flex: 1;
 	}
 
 	svg{
 		width: 100%; height: 100%;
-	}
-
-	@include isLaptop{
-		gap: 30px;
 	}
 }

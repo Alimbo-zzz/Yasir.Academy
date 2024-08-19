@@ -1,6 +1,6 @@
 .wrap{
+	&{@include blur-box}
 	position: relative;
-	@include blur-box;
 	display: grid;
 	grid-template-rows: min-content auto auto auto 1fr;
 	gap: 40px;
