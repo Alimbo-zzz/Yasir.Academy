@@ -72,6 +72,9 @@
 		border: none;
 		color: inherit;
 		cursor: pointer;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		@include a-click;
 		
 		@include isTablet{

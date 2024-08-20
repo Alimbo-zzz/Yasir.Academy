@@ -41,7 +41,7 @@ export default ({className}) => {
 
 	return (<>
 		<div id='about' className={cls.overlay}>
-			<ScrollAnimate><h2 data-title='о нас'>Приятно познакомится</h2></ScrollAnimate>
+			{/* <ScrollAnimate><h2 data-title='о нас'>Приятно познакомится</h2></ScrollAnimate> */}
 			<ScrollAnimate delay={100} duration={1.5} animateIn='zoomInUp'>
 				<div onMouseMove={showControlls} container='' onClick={togglePlay} data-play={isPlay} className={clx(cls.wrap, className)}>
 					<div className={cls.content}>
