@@ -17,6 +17,14 @@
 	a{color: inherit;}
 }
 
+.toast{
+	background: #2a2320 !important;
+	color: hue('w') !important;
+
+	&__progress{
+		background: hue('orange') !important;
+	}
+}
 
 .list{	
 	display: flex;
@@ -30,6 +38,7 @@
 		display: flex;
 		gap: inherit;
 		align-items: center;
+		user-select: none;
 
 		*{
 			transition: 0.3s;
@@ -60,6 +69,9 @@
 		padding: 0.8em 1em;
 		width: 100%;
 		text-align: left;
+		border: none;
+		color: inherit;
+		cursor: pointer;
 		@include a-click;
 		
 		@include isTablet{
@@ -94,7 +106,9 @@
 		@include hover{
 			background: hue('orange');
 		}
+		
 	}
+
 
 	svg{
 		font-size: 30px;
