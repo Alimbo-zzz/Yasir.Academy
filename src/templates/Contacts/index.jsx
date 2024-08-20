@@ -7,6 +7,7 @@ import PhoneIcon from '@mui/icons-material/PhoneOutlined';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { ScrollAnimate } from '@/contexts';
+import { format } from '@/scripts';
 
 export default ({className}) => {
 	
@@ -19,13 +20,13 @@ export default ({className}) => {
 				<p>У вас есть вопросы или вам нужна помощь? Свяжитесь с нами, любым удобным для вас способом:</p>
 				<hr />
 				<ul className={cls.list}>
-					<a className={cls.list__item} target='_blank' href='mailto:alimbo333@gmail.com' >
+					<a className={cls.list__item} target='_blank' href='mailto:yasir.academy.8866@gmail.com' >
 						<div data-icon='mail'><MainIcon/></div>
-						<div data-value>alimbo333@gmail.com</div>
+						<div data-value>yasir.academy.8866@gmail.com</div>
 					</a>
-					<a className={cls.list__item} target='_blank' href='tel:+79994921293' >
+					<a className={cls.list__item} target='_blank' href='tel:+79640478770' >
 						<div data-icon='phone'><PhoneIcon/></div>
-						<div data-value>{"+7 (999) 492 12-93"}</div>
+						<div data-value>{format.phone('+79640478770')}</div>
 					</a>
 				</ul>
 				<ul className={cls.socials}>
