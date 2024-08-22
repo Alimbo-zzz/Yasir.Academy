@@ -13,7 +13,7 @@ export default ({className, theme='default', title='', desc='', price=10000, hre
 			<h3 className={cls.title}>{title}</h3>
 			<p className={cls.desc}>{desc}</p>
 			<h2 className={cls.price}>{format.price(price, '.')}₽</h2>
-			<Button target="_blank" theme='light' href={`/pay?value=${href}`} className={cls.btn}>Оплатить доступ</Button>
+			<Button target="_blank" theme='light' href={`/purchase?value=${href}`} className={cls.btn}>Оплатить доступ</Button>
 			<ul className={cls.list}>
 				<li className={cls.item} marked='false'>Включает:</li>
 				{list.map((el, i) => <li className={cls.item} key={i}>{<TickIcon/>} {el}</li>)}

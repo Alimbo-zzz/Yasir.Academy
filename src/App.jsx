@@ -21,7 +21,8 @@ const App = (props) => {
 				<Route location={location} key={location.pathname} index element={<Main/>} />
 				<Route path='/privacy-policy' element={<PrivacyPolicy/>} />
 				<Route path='/offer' element={<Offer/>} />
-				<Route path='/pay' element={<Pay/>} />
+				<Route path='/purchase' element={<Pay/>} />
+				<Route path='/test' element={<h1>test page 1</h1>} />
 				<Route path='/*' element={<Error/>} />
 			</Routes>
 		</AnimatePresence>
