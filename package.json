@@ -11,7 +11,8 @@
     "deploy": "gh-pages -d dist",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major"
+    "major": "npm version major",
+    "serve": "node server"
   },
   "browserlists": [
     "defaults"
@@ -59,7 +60,6 @@
     "gh-pages": "^6.0.0",
     "normalize.css": "^8.0.1",
     "terser": "^5.19.4",
-    "vite": "^4.4.5",
-    "vite-plugin-static-copy": "^1.0.6"
+    "vite": "^5.4.2"
   }
 }
