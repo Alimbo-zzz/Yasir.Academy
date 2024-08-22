@@ -8,7 +8,7 @@ export default ({href=null, size='', theme='dark',  w='fit-content', css={}, cla
 	
 	let ops = {
 		type,
-		to: href,
+		href,
 		"data-size": size.toUpperCase(),
 		style: {width: w, ...css},
 		theme,
@@ -19,7 +19,7 @@ export default ({href=null, size='', theme='dark',  w='fit-content', css={}, cla
 	return (<>
 		{
 			href ? 
-			<Link {...ops}>{children}</Link>	
+			<a {...ops}>{children}</a>	
 			:
 			<button {...ops}>{children}</button>
 		}

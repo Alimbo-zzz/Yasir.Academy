@@ -16,7 +16,7 @@ export default ({className}) => {
 					{'В нашем Bootcamp вы освоите ключевые навыки веб-разработки в интенсивном формате.\nУчитесь на практике, изучая современные технологии и подходы к созданию сайтов.'}
 				</ScrollAnimate>
 				<ScrollAnimate delay={300} className={cls.foot}>
-					<Button className={cls.foot__btn}>Записаться на Bootcamp</Button>
+					<Button href="#pricelist" className={cls.foot__btn}>Записаться на Bootcamp</Button>
 					<span className={'placeholder'}>Старт первого потока — 15 сентября</span>
 				</ScrollAnimate>
 			</div>
