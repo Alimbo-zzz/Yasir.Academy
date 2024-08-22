@@ -1,0 +1,41 @@
+.About-reasons{
+
+	.swiper{
+		padding-right: 3em;
+	}
+
+	&__slider{
+		width: 100%;
+		overflow: visible;
+	}
+
+
+	&__slide{
+		width: 100%;
+		padding: 1em;
+	}
+
+
+	.About-reasons-slide{
+		&__index{
+			font-size: 2em;
+			color: #FBE2B6;
+		}
+
+		.title{
+			margin-top: 0.5em;
+			margin-bottom: 1em;
+		}
+
+	}
+
+	[data-name='slider-btns']{
+		display: flex;
+		gap:1em;
+		justify-content: flex-end;
+
+		[data-arrow]{
+			font-size: 1.4em;
+		}
+	}
+}

@@ -1,0 +1,112 @@
+
+.About-reasons{
+	display: grid;
+	grid-template-columns: 500px 1fr;
+	align-items: center;
+	position: relative;
+
+
+
+	.container._center{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	@media(max-width: $desktop){
+		grid-template-columns: 420px 1fr;
+	}
+
+	@media(max-width: $laptop){
+		display: flex;
+		flex-direction: column;
+
+		h1.title{
+			margin-bottom: 1.5em;
+			text-align: center;
+			white-space: nowrap;
+		}
+
+		.About-reasons__list{
+			margin: 0 auto;
+			align-items: center;
+		}
+
+	}
+
+
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap:2.5em;
+	}
+
+	&__item{
+		font-size: 1em;
+		max-width: 660px;
+		padding-left: 3em;
+
+		@media(max-width: $desktop){max-width: 530px;}
+		@media(max-width: $phone){
+			padding-left: 0;
+			text-align: center;
+		}
+
+		.title{
+			position: relative;
+			margin-bottom: 0.3em;
+
+			&::before{
+				content: '+';
+				font-size: 0.6em;
+				position: absolute;
+				left: -1em;top: 50%;
+				transform: translate(-100%, -50%);
+				background: $warning;
+				width: 1.5em;height: 1.5em;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-weight: bold;
+				box-shadow: 0 0 0.4em 0.05em $warning;
+
+				@media(max-width: $phone){display: none;}
+			}
+		}
+
+	}
+}
+
+
+
+@media(min-width: $desktop){
+	.About-reasons__item{
+		transform: translateX(-100%);
+		opacity: 0;
+
+		// ________
+		&.aos-animate{opacity: 1;}
+		&:nth-child(1).aos-animate{	transform: translateX(-200px);}
+		&:nth-child(2).aos-animate{	transform: translateX(-35px);}
+		&:nth-child(3).aos-animate{	transform: translateX(40px);}
+		&:nth-child(4).aos-animate{	transform: translateX(35px);}
+		&:nth-child(5).aos-animate{	transform: translateX(-80px);}
+	}
+}
+
+@media screen and(max-width: $desktop) and(min-width: $laptop){
+	.About-reasons__item{
+		transform: translateX(-100%);
+		opacity: 0;
+
+		// ________
+		&.aos-animate{opacity: 1;}
+		&:nth-child(1).aos-animate{	transform: translateX(-240px);}
+		&:nth-child(2).aos-animate{	transform: translateX(-82px);}
+		&:nth-child(3).aos-animate{	transform: translateX(-25px);}
+		&:nth-child(4).aos-animate{	transform: translateX(-50px);}
+		&:nth-child(5).aos-animate{	transform: translateX(-200px);}
+	}
+}

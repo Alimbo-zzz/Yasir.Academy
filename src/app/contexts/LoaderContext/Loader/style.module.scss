@@ -1,0 +1,26 @@
+.loader{
+	position: fixed;
+	left: 0;top: 0;right: 0;bottom: 0;
+	background: #222;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+
+	&__logo{
+		width: 50vw;
+		max-width: 500px;
+		animation: logo_loading 3s ease-in-out infinite;
+	}
+}
+
+
+
+
+@keyframes logo_loading {
+	0%{transform: rotate(0deg);}
+	90%{transform: rotate(-360deg);}
+	100%{transform: rotate(-360deg);}
+}

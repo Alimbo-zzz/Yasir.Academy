@@ -1,0 +1,32 @@
+// window
+$large: 1440px;
+$desktop: 1280px;
+$laptop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+
+$min_w: 330px;
+
+
+
+
+// colors
+$bg: #242327;
+$main: #fff;
+$secondary: #7C7B7D;
+$decoration: #FBE2B6;
+$danger: #D5503A;
+$warning: #F8CC55;
+$success: #46C561;
+$dark: #2F2E32;
+$light: #BFBFBF;
+
+
+// gradients
+
+$gradient_1: linear-gradient(57.18deg, #9263E4 6.47%, #DF5CD6 27.54%, #ECA171 48.16%, #EC805F 70.13%, #FEF3C3 92.55%);
+$gradient_2: linear-gradient(90deg, #7B13D3 30%, #C157E3 50%, #EE88E1 70%, #A0E7F4 95%);
+
+// other
+
+$cb_crooked: cubic-bezier(.26,1.44,1,1.03);

@@ -1,0 +1,138 @@
+.Team{
+	.title{
+		margin-bottom: 0.3em;
+	}
+}
+
+
+.Team-gallery__item{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	aspect-ratio: 2/3;
+	justify-content: space-between;
+	user-select: none;
+	@media(max-width: $phone){
+		max-width: 400px;
+	}
+}
+.Team-gallery{
+
+	position: relative;
+
+	@media(max-width: $phone){
+		padding-bottom: 1em;
+	}
+
+	&::before{
+		content: '';
+		position: absolute;
+		left: 50%;top: 50%;
+		transform: translate(-50%, -50%);
+		height: 80%;
+		aspect-ratio:1/1;
+		border-radius: 50%;
+		z-index: -1000;
+		background: $gradient_2;
+		filter:blur(8em);
+		pointer-events: none;
+		user-select: none;
+		opacity: 0.35;
+	}
+
+
+
+	&__foot{
+		width: 100%;
+		position: absolute;
+		left: 0;bottom: -1em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 10;
+		@media(max-width: $phone){
+			transform: translateY(100%);
+			padding: 0em;
+		}
+	}
+
+	&__arrows{
+		display: flex;
+		align-items: center;
+		font-size: 1.2em;
+		gap:1em;
+	}
+
+	&__pagination{
+		position: relative;
+
+		[data-pagination='index']{
+			font-size: 3em;
+			line-height: 1em;
+		}
+		[data-pagination='all']{
+			position: absolute;
+			right: 0;top: 0;
+			transform: translateX(100%);
+			opacity: 0.5;
+		}
+	}
+
+	.swiper {
+		overflow: visible;
+		padding: 0 5em;
+
+		@media(max-width: $phone){padding-left: 0;}
+
+		.swiper-slide{
+			.Team-gallery__item{
+				transition: 0.3s;
+				transform: scale(0.6);
+				opacity: 0.2;
+			}
+
+			&[data-direction='right'] .Team-gallery__item{transform-origin: top left;}
+			&[data-direction='left'] .Team-gallery__item{transform-origin: top right;}
+			&.swiper-slide-next, &.swiper-slide-prev{
+				.Team-gallery__item{
+					transform: scale(0.8);
+					transform-origin: top center;
+					opacity: 0.5;
+				}
+			}
+			&.swiper-slide-active .Team-gallery__item{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+	}
+}
+
+
+
+.Team-card{
+	width: 100%;height: 85%;
+	position: relative;
+	border-radius: 1em;
+	overflow: hidden;
+	margin-bottom: 1em;
+
+	&::before{
+		content: '';
+		position: absolute;
+		left: 0;top: 0;right: 0;bottom: 0;
+		background: #fff;
+		opacity: 0.05;
+		filter:blur(2em);
+		z-index: -1000;
+	}
+
+	img{
+		width: 100%; height: 100%;
+		object-fit: contain;
+		object-position: center;
+		user-select: none;
+		pointer-events: none;
+	}
+}

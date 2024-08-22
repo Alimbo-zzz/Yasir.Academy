@@ -1,0 +1,239 @@
+$icon_color: #F8CC55;
+$color_opacity: rgba(248,204,85, 0.2);
+
+.card{
+	width: 100%; height: 100%;
+	position: relative;
+	transition: 0.4s;
+
+
+	&__front, &__back{
+		border-radius: 0.8em;
+		padding: 1em;
+		position: absolute;
+		width: 100%; height: 100%;
+		transition: inherit;
+		backface-visibility: hidden;
+		background: linear-gradient(to left, rgba(40, 40, 40, 1), rgba(50, 50, 50, 1));
+
+		display: flex;
+		flex-direction: column;
+		gap:1em;
+	}
+
+	&__front{
+		z-index: 4;
+		.card__body{
+			margin-top: 2em;
+		}
+	}
+
+	&__text{
+		font-size: 0.9em;
+		font-weight: 300;
+		margin-bottom: 0.5em;
+	}
+
+	&__text_cont{
+		// max-height: 100%;
+		overflow-y: auto;
+		// border:1px solid red;
+	}
+
+
+	&__back{
+		z-index: 2;
+		transform: rotateY(180deg);
+
+		.card__body{
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+
+		.card__text{
+			position: relative;
+			padding-left: 1em;
+
+			&::before{
+				content: '';
+				background: currentColor;
+				width: 0.5em;height: 0.5em;
+				aspect-ratio:1/1;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;top: 0.6em;
+			}
+		}
+
+
+		&::before{
+			content: '';
+			transition: inherit;
+			z-index: -1000;
+			position: absolute;
+			left: 50%;top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%; height: 100%;
+			background: $gradient_2;
+			filter: blur(3em);
+			pointer-events: none;
+			opacity: 0;
+		}
+	}
+
+
+
+
+	&__head{
+		display: grid;
+		grid-template-columns: 1fr 3em;
+		gap:1em;
+
+		.card__flipBtn{grid-column: 2/3;}
+	}
+
+	&__body{
+		height: 100%;
+		overflow: auto;
+	}
+
+
+
+
+
+	&__flipBtn{
+		aspect-ratio:1/1;
+		background: none;
+		border: none;
+		user-select: none;
+		font-size: 3em;
+		line-height: 1em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		border-radius: 0.2em;
+	}
+
+
+	&__title{
+		font-size: 1.8em;
+		font-weight: 500;
+		margin-bottom: 0.3em;
+	}
+
+
+	&__icon{
+		font-size: 1rem;
+		position: absolute;
+		left: 0em;top: 0;
+		transform: translateY(-30%) scale(0.8);
+		pointer-events: none;
+		width: 10.2em;
+		height: 10.2em;
+		transition: 0.3s;
+		color: #fff;
+		border:1px solid $color_opacity;
+		border-radius: 50%;
+
+		[svg-item='icon']{
+			border:0.01em solid $color_opacity;
+			aspect-ratio:1/1;
+			height: 1.6em;width: 1.6em;
+			position: absolute;
+			left: 50%;top: 50%;
+			border-radius: 50%;
+			font-size: 3.6em;
+			transform: translate(-50%, -50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&::before{
+				content: '';
+				position: absolute;
+				left: 50%;top: 50%;
+				transform: translate(-50%, -50%);
+				width: 80%;height: 80%;
+				aspect-ratio:1/1;
+				background: $icon_color;
+				border-radius: 50%;
+				z-index: -100;
+				opacity: 0.4;
+				filter:blur(0.2em);
+			}
+		}
+
+
+		[svg-item='dot']{
+			position: absolute;
+			left: 50%;top: 50%;
+			// transform: translate(-48%, -51.5%) scaleY(-1);
+			width: 78%; height: 78%;
+			border-radius: 50%;
+			transition: inherit;
+
+			&::before{
+				content: '';
+				width: 1em;height: 1em;
+				position: absolute;
+				left: 50%; top: 0;
+				background: $icon_color;
+				border-radius: 50%;
+				box-shadow: 0 0 0.5em 0.1em $icon_color;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		[data-svg='circle']{
+			width: 100%;height: 100%;
+			transition: inherit;
+		}
+
+		circle{
+			width: 100%;height: 100%;
+			r:4em;
+			cx:5em;
+			cy:5em;
+			fill: transparent;
+			stroke-width: 0.2em;
+			stroke: currentColor;
+			box-shadow: 0 0 1em 0.1em currentColor;
+			transition: inherit;
+			transform: scale(-1) rotate(-90deg);
+			transform-origin: 50% 50%;
+  		// filter: drop-shadow(0px 0px 0.2em $icon_color);
+
+			&[svg-item='bg']{
+				// stroke: rgba(34,34,34,0.5);
+				stroke:transparent;
+			}
+
+			&[svg-item='meter-1']{
+				stroke: $icon_color;
+			}
+		}
+
+	}
+
+}
+
+
+// active classes
+
+.card{
+	&[data-side='front']{
+	}
+
+	&[data-side='back']{
+		.card__front{transform:rotateY(180deg); opacity: 0; pointer-events: none;}
+		.card__back{
+			transform:rotateY(360deg);
+			&::before{opacity: 0.2;
+			transition-delay: 0.2s;}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.grid{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 3em;
+	grid-row-gap: 6em;
+
+	@media(max-width: $desktop){
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+
+	[data-name="card-back"] [data-name="card-body"]{
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+
+
+	&__item{
+		aspect-ratio: 1/1.2;
+		width: 100%;
+		max-height: 30em;
+		@media(max-width: $desktop){
+			max-height: 25em;
+			&:last-child{
+				grid-column: 1/3;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+		@media(max-width: $laptop){max-height: 28em;}
+	}
+
+	[data-name='end']{
+		padding: 4em 0;
+
+		h4{
+			margin-bottom: 2em;
+			line-height: 1.6em;
+		}
+	}
+}

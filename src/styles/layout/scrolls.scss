@@ -1,0 +1,19 @@
+
+*::-webkit-scrollbar-track{
+	border-radius: 100em;
+	background-color: transparent;
+}
+
+
+*::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+	height: 5px;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	border-radius: 100em;
+	background-color: rgba(187,186,183, 0.8);
+}

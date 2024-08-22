@@ -1,0 +1,53 @@
+@import '../files/fonts';
+
+
+.text{
+	color:$main;
+	font-weight: 300;
+
+
+	._link{
+		text-decoration: underline;
+		color: $warning;
+		cursor: pointer;
+	}
+}
+
+
+.title{
+	color: $main;
+	font-weight: 500;
+	line-height: 1.2em;
+
+	&._sec{
+		margin-bottom: 1.5em;
+		@media(max-width: $tablet){
+			margin-bottom: 0.5em;
+			position: relative;
+
+			&::before{
+				content: '';
+				position: absolute;
+				left: 0;top: -0.5em;
+				width: 100px;height: 4px;
+				border-radius: 100px;
+				background: $warning;
+			}
+		}
+	}
+
+	&._bold{font-weight: bold;}
+
+	&[data-style="gold"]{
+		color: $warning;
+		font-weight: bold;
+		text-shadow: 0 0 0.15em;
+		line-height: 1em;
+	}
+}
+
+
+.placeholder{
+	color: $secondary;
+	font-size: 1em;
+}

@@ -1,0 +1,43 @@
+.nav{
+
+
+	&__list{
+		display: flex;
+	}
+
+	&__item{
+		color: $main;
+		transition: 0.2s;
+		position: relative;
+		user-select: none;
+
+		a{
+			transition: inherit;
+			display: block;
+			color: currentColor;
+			font-size: 15px;
+			padding: 0.5em 1.5em;
+			@media(max-width: $laptop){	font-size: 13px;}
+		}
+
+
+		&::before{
+			content: '';
+			transition: transform 0.2s;
+			position: absolute;
+			left: 50%; bottom: 0;
+			transform: translateX(-50%) scaleX(0);
+			width: 80%; height: 2px;
+			background: currentColor;
+			pointer-events: none;
+		}
+
+		&:hover{
+			color: $warning;
+			&::before{transform: translateX(-50%) scaleX(1);}
+		}
+	}
+
+
+
+}

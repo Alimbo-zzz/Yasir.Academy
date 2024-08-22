@@ -1,0 +1,122 @@
+[
+	{
+		"id": "00c6a3a8-dd1d-420b-a211-45a3d93f6fbb",
+    "name":"Иван Кабанов",
+    "post":"CEO"
+  },
+  {
+		"id": "faca490d-9ec5-46e8-8bd1-346a4dd6480f",
+    "name":"Рамиль Зинатуллин",
+    "post":"Head of UA"
+  },
+  {
+		"id": "e3df3f19-4bc2-48e2-b7dd-6cd69fe082a3",
+    "name":"Олег Сердюк",
+    "post":"CTO"
+  },
+  {
+		"id": "7a9de54e-e538-41ec-afce-bff8493d784d",
+    "name":"Наталья Посох",
+    "post":"Product Manager"
+  },
+  {
+		"id": "481cb7f3-a256-42c2-800e-960b01d101eb",
+    "name":"Анастасия Жулева",
+    "post":"Head UX/UI Designer"
+  },
+  {
+		"id": "66785776-b3d6-422c-aad9-7ad4a4d9436a",
+    "name":"Полина Вирки",
+    "post":"UX/UI Designer"
+  },
+  {
+		"id": "bb7e3ad7-6746-4ff2-b68f-e91aa5df2f09",
+    "name":"Елена Сметанина",
+    "post":"Junior Project Manager"
+  },
+  {
+		"id": "0761233b-c880-4229-8db0-5632c01a3790",
+    "name":"Оксана Бахина",
+    "post":"Project Manager, HR"
+  },
+  {
+		"id": "256ff4b9-6a75-42d7-9ff3-8271b0a432de",
+    "name":"Александр Калайда",
+    "post":"Junior Project Manager"
+  },
+  {
+		"id": "cd6d1395-43f6-4e66-b57e-ce898b0b627e",
+    "name":"Анна Прус",
+    "post":"Account Manager"
+  },
+  {
+		"id": "c0f50f6a-c416-4d78-99a3-c4a01a3beebe",
+    "name":"Денис Горбатовский",
+    "post":"Game Designer"
+  },
+  {
+		"id": "adcb9eda-34b7-404e-8b05-709eed14dd32",
+    "name":"Кристина Образцова",
+    "post":"Game Designer/Sound Designer"
+  },
+  {
+		"id": "da905663-a0b1-423a-bfa5-ec7c6deebabf",
+    "name":"Данил Бродин",
+    "post":"Unity Developer"
+  },
+  {
+		"id": "9b1b6d0f-5ef7-40ed-b696-148a639ab8e8",
+    "name":"Артём Парфенченко",
+    "post":"Unity Developer"
+  },
+  {
+		"id": "59596c2d-f5b5-45a4-ad5e-ccc75e3daaf4",
+    "name":"Александр Часовских",
+    "post":"Unity Developer"
+  },
+  {
+		"id": "9f6ad2f7-0a95-4fb9-a1e2-e41f31c493cc",
+    "name":"Алим Мамбетов",
+    "post":"Full Stack Developer"
+  },
+  {
+		"id": "29a497d0-5dbe-4bc2-8c37-0f4fe9256a79",
+    "name":"Наталья Журавская",
+    "post":"Front-End Developer"
+  },
+  {
+		"id": "ae21f6f3-d7f0-45d4-aa7c-b2661e7bfb83",
+    "name":"Дмитрий Макаров",
+    "post":"Android Developer"
+  },
+  {
+		"id": "1a2599fe-a3a2-4157-8b0f-eb58b6b8f118",
+    "name":"Дмитрий Пасютин",
+    "post":"Android Developer"
+  },
+  {
+		"id": "41b02fd5-45ad-4812-af40-54de88dfb15d",
+    "name":"Никита Богатов",
+    "post":"Android Developer"
+  },
+  {
+		"id": "9b38d821-b3ea-4010-8610-8754e6bc3b32",
+    "name":"Максим Лебедев",
+    "post":"iOS Developer"
+  },
+  {
+		"id": "a18ff5da-0e67-483b-ac1f-a649e6fa0db2",
+    "name":"Аля Кан",
+    "post":"QA Engineer"
+  },
+  {
+		"id": "0ea6518e-8d03-4491-9f13-7965723de66e",
+    "name":"Рами Хамадех",
+    "post":"QA Engineer"
+  },
+  {
+		"id": "8c957b6d-1516-4c4e-a19f-0b64a41be019",
+    "name":"Валентин Моисеенко",
+    "post":"Media Buyer"
+  }
+]

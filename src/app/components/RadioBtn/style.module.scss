@@ -1,0 +1,54 @@
+.btn{
+	user-select: none;
+	display: flex;
+	align-items: center;
+	gap:1em;
+	cursor: pointer;
+	transition: 0.2s;
+
+	&:hover{
+		color: $decoration;
+	}
+
+	input{
+		display: none;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	input[type='radio']:checked + .btn__style{
+		&::before{
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+	}
+
+	&__style{
+		width: 1.2em;height: 1.2em;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background: none;
+		color: $decoration;
+		border: 0.05em solid;
+		position: relative;
+		transition: inherit;
+
+		&::before{
+			content: '';
+			position: absolute;
+			left: 50%;top: 50%;
+			width: 65%;height: 65%;
+			aspect-ratio:1/1;
+			border-radius: 50%;
+			background: currentColor;
+			transition: inherit;
+			transform: translate(-50%, -50%) scale(0);
+			opacity: 0;
+		}
+	}
+
+	&__text{
+		font-weight: lighter;
+		transition: inherit;
+	}
+}

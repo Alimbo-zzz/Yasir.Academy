@@ -1,0 +1,62 @@
+.CircleLink{
+	display: block;
+	width: 6em; height: 6em;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+	transition: 0.3s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4em;
+
+	&::before, &::after{
+		content: '';
+		position: absolute;
+		left: 50%;top: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		aspect-ratio:1/1;
+		border-radius: 50%;
+		background: #FFDFA9;
+		pointer-events: none;
+		transition: 0.3s;
+	}
+
+
+	&::before{
+		z-index: -100;
+		filter:blur(2em);
+	}
+
+	&::after{
+		z-index: -80;
+		filter:blur(1.2em);
+		opacity: 0.8;
+	}
+
+	&:hover{
+		.CircleLink__arrow{transform: translateY(5px);}
+
+		// &::after{	opacity: 1;}
+	}
+
+
+	&__arrow{
+		position: absolute;
+		width: 1.6em;
+		transition: 0.3s $cb_crooked;
+	}
+
+	&__circle{
+		position: absolute;
+		width: 100%;height: 100%;
+		animation: circle 10s linear infinite;
+	}
+}
+
+
+@keyframes circle{
+	0%{transform: rotate(0deg)}
+	100%{transform: rotate(360deg)}
+}

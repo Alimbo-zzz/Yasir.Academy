@@ -1,0 +1,60 @@
+.Portfolio-slider{
+
+
+
+
+	&__slide{
+		width: 100%; height: 100%;
+		position: absolute;
+		left: 50%;top: 50%;
+		transform: translate(-50%, -50%);
+		padding: 0 9em;
+		user-select: none;
+		transition: 0.5s;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1em;
+
+		@media screen and(max-height: 880px) and(min-width: $desktop){
+			padding: 0 14em;
+		}
+
+		opacity: 0;
+		pointer-events: none;
+
+		&[data-active='true']{
+			opacity: 1;
+			pointer-events: auto;
+
+			img{
+				&:nth-child(odd){	transform: translateY(1em); }
+				&:nth-child(even){	transform: translateY(-1em); }
+			}
+		}
+
+		._i{
+			position: absolute;
+			font-size: 10em;
+			left: 0;top: 0;
+		}
+
+		@media(max-width: $tablet){	padding: 0; }
+
+		img{
+			transition: 0.6s ease-in-out;
+			width: 100%; height: 100%;
+			object-fit: contain;
+			object-position: center;
+			user-select: none;
+			pointer-events: none;
+
+
+			&:nth-child(odd){	transform: translateY(110%); }
+			&:nth-child(even){	transform: translateY(-110%); }
+		}
+	}
+
+
+
+}

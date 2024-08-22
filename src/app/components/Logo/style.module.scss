@@ -1,0 +1,23 @@
+.logo{
+	width: 4em;
+	aspect-ratio:1/1;
+	transition: 1s $cb_crooked;
+
+	a{
+		display: block;
+		width: 100%;height: 100%;
+		cursor: pointer;
+	}
+
+	img{
+		width: 100%; height: 100%;
+		object-fit: contain;
+		object-position: center;
+		user-select: none;
+		pointer-events: none;
+	}
+
+	&:hover{
+		transform: rotate(-360deg);
+	}
+}

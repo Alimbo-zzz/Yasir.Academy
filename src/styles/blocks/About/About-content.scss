@@ -1,0 +1,86 @@
+.About-content{
+
+	@media(max-width: $phone){text-align: center;}
+
+	padding-top: 10em;
+	position: relative;
+
+	&__grid{
+		display: flex;
+		flex-direction: column;
+		max-width: 800px;
+		gap: 3em;
+	}
+
+	&__list{
+		padding-top: 4em;
+		display: flex;
+		gap:10px;
+
+		@media(max-width: $tablet){
+			padding-top: 16em;
+		}
+
+		@media(max-width: $phone){
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap:20px;
+			padding-top: 20em;
+		}
+	}
+
+	&__item{
+		width: 250px;
+
+		@media(max-width: $phone){
+			width: 100%;
+			max-width: 360px;
+			display: grid;
+			gap:10px;
+			align-items: center;
+			grid-template-columns: 80px 1fr;
+		}
+
+		.text{
+			font-weight: 400;
+			line-height: 1.2em;
+		}
+	}
+
+
+	._image{
+		position: absolute;
+		z-index: -1000;
+		right: -2em;bottom: 0;
+		width: 50em;
+		mix-blend-mode: lighten;
+		transform: translate(30%, 20%);
+		user-select: none;
+		pointer-events: none;
+		opacity: 0;
+		&.aos-animate{opacity: 1;}
+
+		@media(max-width: $desktop){transform: scale(0.8) translate(50%, 40%);}
+		@media(max-width: $laptop){transform: scale(0.7) translate(55%, 120%);}
+		// @media(max-width: $tablet){	transform: scale(0.6) translate(30%, 10%);}
+		@media(max-width: $tablet){
+			left: 50%; right: auto;
+			width: 25em;
+			// box-shadow: 0 0 1em 0.1em $main;
+			transform: translate(-50%, -55%);
+			// aspect-ratio: 1/1;
+			// border-radius: 50%;
+			// overflow: hidden;
+			object-fit: contain;
+			object-position: left center;
+		}
+
+		@media(max-width: $phone){
+			transform: translate(-50%, -80%);
+		}
+
+		@media(max-width: 354px){transform: translate(-50%, -90%);}
+	}
+
+}

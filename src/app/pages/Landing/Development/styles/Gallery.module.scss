@@ -1,0 +1,103 @@
+.gallery{
+
+	position: relative;
+
+
+
+	&__pagination{
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 50%;bottom: 5em;
+		transform: translateX(-50%);
+		height: 2em;
+		z-index: 30;
+		gap:1em;
+		max-width: 92%;
+		overflow: hidden;
+	}
+
+	&__bullet{
+		background: #938771;
+		opacity: 0.6;
+		width: 2em;height: 1em;
+		cursor: pointer;
+		border-radius: 5em;
+		user-select: none;
+		transition: 0.3s;
+
+
+		&[data-active='true']{
+			background: #F8CC55;
+			opacity: 1;
+			width: 1em;height: 1em;
+			pointer-events: none;
+		}
+	}
+
+
+
+
+	&__item{
+		width: 100%;
+		@media(max-width: $phone){height:auto;}
+		aspect-ratio:2/2.5;
+		padding: 3em 1em;
+		max-width: 500px;
+		margin: 0 auto;
+
+		@media(max-width: 400px){	aspect-ratio:2/2.8;}
+		@media(max-width: 350px){aspect-ratio:2/3.2;}
+
+
+		[data-name="card-front"] [data-name="card-body"]{
+			flex-direction: column;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			p{
+				max-width: 300px;
+			}
+		}
+
+		[data-name="card-back"] [data-name="card-body"]{
+			margin-bottom: 3em;
+		}
+
+		[data-name="card-back"] [data-name="card-body"]{
+			max-width: 300px;
+			margin: 0 auto;
+			padding-bottom: 3em;
+		}
+
+		[data-name="card-front"] [data-name="card-head"] [data-name='icon']{
+			transform: scale(0.6) translateX(-85%);
+			left: 50%;
+		}
+
+
+		[data-name='card-back']{
+			overflow: hidden;
+			&::before{display: none;}
+		}
+
+
+	}
+}
+
+
+
+
+.by-btn{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h4{
+		color: $decoration;
+		margin: 2em 1em;
+	}
+}
