@@ -22,11 +22,13 @@ export default ({className}) => {
 	}
 
 	useEffect(()=>{
+		if(!videoRef.current) return;
 		if(isPlay) videoRef.current.play();
 		else videoRef.current.pause();
 	}, [isPlay])
 
 	useEffect(()=>{
+		if(!videoRef.current) return;
 		if(!isPlay) return setIconVisible(true);
 		clearTimeout(timeoutRef.current)
 		timeoutRef.current = setTimeout(() => { setIconVisible(false) }, 300);

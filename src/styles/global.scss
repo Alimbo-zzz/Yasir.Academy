@@ -32,7 +32,6 @@
 		"gray-brown": hsla(27, 9%, 19%, $a),
 		"dark-gray": hsla(20, 7%, 25%, $a),
 	);
-	
 
 	@return map.get($colors, $name) 
 };
